@@ -37,4 +37,5 @@ int main(){
         cout<<"Error: no se pudieron leer los datos del archivo "<<archivo<<endl;
         return 1;
     }
+
 }
