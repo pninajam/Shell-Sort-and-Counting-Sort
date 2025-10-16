@@ -28,6 +28,18 @@ long long medirTiempoShell(vector<int>& data, int rep){
     return total / rep;
 }
 
+long long medirTiempoCounting(vector<int>& data, int rep){
+    long long total = 0;
+    for(int i = 0; i < rep; i++){
+        vector<int> tmp = data;
+        auto start = high_resolution_clock::now();
+        countingSort(tmp);
+        auto end = high_resolution_clock::now();
+        total += duration_cast<nanoseconds>(end - start).count();
+    }
+    return total / rep;
+}
+
 int main(){
     system("mkdir results");
     int opcion, repeticiones;
@@ -53,5 +65,7 @@ int main(){
     }
 
     long long tShell = medirTiempoShell(data, repeticiones);
+    long long tCounting = medirTiempoCounting(data, repeticiones);
+ 
     return 0;
 }
