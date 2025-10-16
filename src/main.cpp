@@ -16,6 +16,18 @@ vector<int> readData(const string& filename){
     return data;
 }
 
+long long medirTiempoShell(vector<int>& data, int rep){
+    long long total = 0;
+    for(int i = 0; i < rep; i++){
+        vector<int> tmp = data;
+        auto start = high_resolution_clock::now();
+        shellSort(tmp.data(), tmp.size());
+        auto end = high_resolution_clock::now();
+        total += duration_cast<nanoseconds>(end - start).count();
+    }
+    return total / rep;
+}
+
 int main(){
     system("mkdir results");
     int opcion, repeticiones;
@@ -39,5 +51,7 @@ int main(){
         cout<<"Error: no se pudieron leer los datos del archivo "<<archivo<<endl;
         return 1;
     }
+
+    long long tShell = medirTiempoShell(data, repeticiones);
     return 0;
 }
