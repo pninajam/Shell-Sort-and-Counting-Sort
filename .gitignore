@@ -1,0 +1,13 @@
+# Ignorar archivos ejecutables
+*.exe
+*.out
+
+# Archivos de compilación
+*.obj
+*.o
+
+# Carpetas temporales o de build
+/build/
+/bin/
+/Debug/
+/Release/
