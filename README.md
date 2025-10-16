@@ -3,9 +3,9 @@
 Proyecto de análisis de tiempo de ejecución entre **Shell Sort** y **Counting Sort** con diferentes tamaños de datos.
 
 Autors 
-- Pedro Pablo Ninaja Medina
-- Jairo Brayan Zegarra Gutierrez
-- Arturo Willy Montalico Llica
+- Pedro Pablo Ninaja Medina        2024-119007
+- Jairo Brayan Zegarra Gutierrez   2024-119054
+- Arturo Willy Montalico Llica     2024-119034
 📁 Estructura del Proyecto
 ```
 proyecto/
