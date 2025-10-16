@@ -23,6 +23,8 @@ proyecto/
 └── README.md               # Documentación
 ```
 
+## Nota: Para ejecutar con los datos numericos (10,100,1000,10000,100000) debes colocar la ubiacion del archivo .txt donde lo clono
+
 ## 🚀 Compilación y Ejecución
 
 ### Requisitos
