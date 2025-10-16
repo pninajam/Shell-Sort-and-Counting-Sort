@@ -3,6 +3,7 @@
 #include <string>
 #include <chrono>
 #include <fstream>
+#include "countingsort.cpp"
 using namespace std;
 using namespace std::chrono;
 
@@ -37,5 +38,5 @@ int main(){
         cout<<"Error: no se pudieron leer los datos del archivo "<<archivo<<endl;
         return 1;
     }
-
+    return 0;
 }
