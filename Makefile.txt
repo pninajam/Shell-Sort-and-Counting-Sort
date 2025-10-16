@@ -1,0 +1,33 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Iinclude
+TARGET = sort_comparison
+SRC_DIR = src
+OBJ_DIR = obj
+INCLUDE_DIR = include
+
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+all: directories $(TARGET)
+
+directories:
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p data
+	@mkdir -p results
+
+$(TARGET): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ_DIR) $(TARGET)
+
+clean-all:
+	rm -rf $(OBJ_DIR) $(TARGET) data/*.txt results/*.csv
+
+run: all
+	./$(TARGET)
+
+.PHONY: all clean clean-all directories run
