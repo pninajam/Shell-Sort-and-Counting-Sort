@@ -76,6 +76,8 @@ int main(){
     saveTime("shell_" + to_string(data.size()) + ".txt", tShell);
     saveTime("counting_" + to_string(data.size()) + ".txt", tCounting);
 
+    cout << "Tiempo ShellSort: " << tShell << " nanosegundos\n";
+    cout << "Tiempo CountingSort: " << tCounting << " nanosegundos\n";
     
     return 0;
 }
