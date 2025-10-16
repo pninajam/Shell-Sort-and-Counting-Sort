@@ -16,6 +16,12 @@ vector<int> readData(const string& filename){
     return data;
 }
 
+void saveTime(const string& filename, long long dur){
+    ofstream file("results/" + filename);
+    file << dur << " nanosegundos\n";
+    file.close();
+}
+
 long long medirTiempoShell(vector<int>& data, int rep){
     long long total = 0;
     for(int i = 0; i < rep; i++){
@@ -66,6 +72,10 @@ int main(){
 
     long long tShell = medirTiempoShell(data, repeticiones);
     long long tCounting = medirTiempoCounting(data, repeticiones);
- 
+    
+    saveTime("shell_" + to_string(data.size()) + ".txt", tShell);
+    saveTime("counting_" + to_string(data.size()) + ".txt", tCounting);
+
+    
     return 0;
 }
